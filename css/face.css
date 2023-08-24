@@ -1,0 +1,201 @@
+body{
+   background-image: url('/assets/bg2.jpg');
+   background-size: cover;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:bisque;
+    height: 40px;
+    text-transform: uppercase;
+    
+   /* box-shadow:0 50px 50px #757676;
+    margin-bottom:60px ;*/
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+a{
+    margin-left: 20px;
+    color: black;
+    margin-top: 10px;
+    /*background-color: antiquewhite;
+    border-radius:10px;*/
+}
+.Search{
+    margin-right: 0px;
+    margin-left: 15px;
+    height: 20px;
+    width: 150px;
+    margin-top: 8px;
+    border-radius: 0%;
+}
+.entete{
+    display: flex;
+    justify-content: space-around;
+    background-color:rgb(238, 218, 195);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    height: 15px;
+}
+h5{
+    margin-top: 0;
+}
+d{
+    margin-top: 8px;
+    margin-right: 0px;
+}
+.container{
+    width: 1000px;
+    margin: auto;
+    transition: 0.5s;
+}
+header{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 50px;
+}
+header .shopping{
+    position: relative;
+    text-align: right;
+}
+header .shopping img{
+    width: 40px;
+}
+header .shopping span{
+    background-color: rgb(252, 75, 5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    position: absolute;
+    top: -5px;
+    left: 94%;
+    padding: 3px 10px;
+}
+.list{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+}
+.card{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 500px;
+    background-color: rgb(209, 215, 194);
+    height:100vh ;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+}
+.card h1{
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+    margin-top: 5px;
+    padding: 0 20px;
+    height: 70px;
+    width: 348px;
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+    background-color:  rgb(141, 160, 123);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card .cheackout{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+}
+.card .cheackout div {
+    /*background-color:rgb(141, 160, 123);*/
+    width: 50%;
+    height: 40px;
+    margin-left: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor:pointer ;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card .cheackout div:nth-child(2):hover{
+    background-color: #881f1f;
+}
+.card .cheackout div:nth-child(2){
+    background-color: rgb(203, 134, 134);
+    color: #0e0606;
+    border-radius: 10px;
+    border: #090707;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.active .card{
+    left: calc(100% - 500px);
+}
+.active .container{
+    transform: translateX(-200px);
+}
+.list .item{
+    border: 4px;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+    margin-bottom:60px ;
+    text-align: center;
+    background-color: rgb(240, 222, 199);
+    padding: 20px;
+    box-shadow:0 50px 50px #757676;
+}
+.list .item img{
+    width: 90%;
+}
+.list .item .title{
+    font-weight: 600;
+}
+/*.list .item .price{
+    margin-left:;
+}*/
+.list .item button{
+    background-color: bisque;
+    color: #160b0b;
+    padding: 5px;
+    width: 50%;
+}
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3 , 1fr);
+    color: #090707;
+    font-family: bold;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+
+}
+.listCard li img{
+    border-radius: 10%;
+    border-color:#0e0606;
+    border: 2px;
+   width: 90%; 
+}
+.listCard button{
+
+    width: 15%;
+    height: 20%;
+    /*background-color:#aab7ae;*/
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;   
+}
