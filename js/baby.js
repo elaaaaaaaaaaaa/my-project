@@ -1,13 +1,15 @@
+// Get references to the DOM elements
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
 let list = document.querySelector('.list');
 let listCard = document.querySelector('.listCard');
 let body = document.querySelector('body');
 let total = document.querySelector('.quantity');
-
+// Event listener to open shopping cart
 openShopping.addEventListener('click',()=>{
     body.classList.add('active');
 })
+// Event listener to close shopping cart
 closeShopping.addEventListener('click',()=>{
     body.classList.remove('active');
 })
@@ -107,6 +109,7 @@ let products = [
 ];
 
 let listCards= [];
+// Initialize the app by populating the product list
 function initApp(){
     products.forEach((value, key)=>{
         let newDiv = document.createElement('div');
@@ -121,6 +124,8 @@ function initApp(){
         })
 }
 initApp();
+
+// Add a product to the shopping cart
 function addToCard(key){
     if(listCards[key]==null){
         listCards[key]= products[key];
@@ -128,6 +133,8 @@ function addToCard(key){
     }
     reloadCard();
 }
+// Reload the shopping cart with updated items
+
 function reloadCard(){
     listCard.innerHTML='';
     let count = 0;
@@ -155,6 +162,7 @@ function reloadCard(){
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
 }
+// Change the quantity of a product in the shopping cart
 function changeQuantity(key,quantity){
     if(quantity==0){
         delete listCards[key];

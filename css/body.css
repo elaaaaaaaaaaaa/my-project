@@ -3,28 +3,45 @@ body{
     height: 100%;
     width: 100%;
 }
+
+/* Hover effect for buttons within .list .item */
+.list .item button:hover {
+    background-color: #fff;
+}
+
+/* Styling for the login section */
+#login {
+    margin-left: 0px;
+    border-radius: 5px;
+}
+
+/* Change color of item on mouse hover */
+.list .item:hover {
+    background-color: rgb(250, 230, 180);
+}
+
+/* Styling for the navigation bar */
 .navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color:bisque;
+    background-color: bisque;
     height: 40px;
     text-transform: uppercase;
-    
-   /* box-shadow:0 50px 50px #757676;
-    margin-bottom:60px ;*/
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
 }
-a{
+
+/* Styling for anchor links */
+a {
     margin-left: 20px;
     color: black;
     margin-top: 10px;
-    /*background-color: antiquewhite;
-    border-radius:10px;*/
 }
-.Search{
+
+/* Styling for the search input */
+.Search {
     margin-right: 0px;
     margin-left: 15px;
     height: 20px;
@@ -32,74 +49,91 @@ a{
     margin-top: 8px;
     border-radius: 0%;
 }
-.entete{
+
+/* Styling for the header section */
+.entete {
     display: flex;
     justify-content: space-around;
-    background-color:rgb(238, 218, 195);
+    background-color: rgb(238, 218, 195);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     height: 15px;
 }
-h5{
+
+/* Styling for h5 elements */
+h5 {
     margin-top: 0;
 }
-d{
+
+/* Styling for d elements */
+d {
     margin-top: 8px;
     margin-right: 0px;
 }
-.container{
+
+/* Container width and centering */
+.container {
     width: 1000px;
     margin: auto;
     transition: 0.5s;
 }
-header{
+
+/* Styling for the header section */
+header {
     display: grid;
     grid-template-columns: 1fr 50px;
     margin-top: 50px;
 }
-header .shopping{
+
+/* Styling for the shopping cart icon */
+header .shopping {
     position: relative;
     text-align: right;
 }
-header .shopping img{
+
+/* Styling for shopping cart icon image */
+header .shopping img {
     width: 40px;
 }
-header .shopping span{
+
+/* Styling for the shopping cart quantity indicator */
+header .shopping span {
     background-color: rgb(252, 75, 5);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:#fff;
+    color: #fff;
     position: absolute;
     top: -5px;
     left: 94%;
     padding: 3px 10px;
 }
-#login{
-    margin-left: 0px;
-    background-color: bisque;
-    border-radius: 5px;
-}
-.list{
+
+/* Styling for the product list */
+.list {
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 20px;
     margin-top: 50px;
 }
-.card{
+
+/* Styling for the product card */
+.card {
     position: fixed;
     top: 0;
     left: 100%;
     width: 500px;
-    background-color: rgb(209, 215, 194);
-    height:100vh ;
+    background-color: rgb(247, 241, 225);
+    height: 100vh;
     transition: 0.5s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 20px;
+   
 }
-.card h1{
+
+/* Styling for card headings */
+.card h1 {
     color: rgb(0, 0, 0);
     font-weight: 100;
     margin-top: 5px;
@@ -109,19 +143,23 @@ header .shopping span{
     margin-left: 60px;
     display: flex;
     align-items: center;
-    background-color:  rgb(141, 160, 123);
+    background-color: rgb(209, 217, 201);
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.card .cheackout{
+
+/* Styling for the checkout section */
+.card .cheackout {
     position: absolute;
     bottom: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2 , 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
+
+/* Styling for checkout buttons */
 .card .cheackout div {
-    background-color:rgb(141, 160, 123);
+    background-color: rgb(219, 226, 213);
     width: 50%;
     height: 40px;
     margin-left: 75px;
@@ -129,78 +167,105 @@ header .shopping span{
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    cursor:pointer ;
+    cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.card .cheackout div:nth-child(2):hover{
+
+/* Styling for the second checkout button on hover */
+.card .cheackout div:nth-child(2):hover {
     background-color: #881f1f;
 }
-.card .cheackout div:nth-child(2){
-    background-color: rgb(203, 134, 134);
+
+/* Styling for the second checkout button */
+.card .cheackout div:nth-child(2) {
+    background-color: rgb(186, 21, 21);
     color: #0e0606;
     border-radius: 10px;
     border: #090707;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.active .card{
+
+/* Styling when the shopping cart is active */
+.active .card {
     left: calc(100% - 500px);
 }
-.active .container{
+
+/* Styling when the shopping cart is active */
+.active .container {
     transform: translateX(-200px);
 }
-.list .item{
+
+/* Styling for each product item */
+.list .item {
     border: 4px;
     border-radius: 10px;
     height: 200px;
     width: 200px;
-    margin-bottom:60px ;
+    margin-bottom: 60px;
     text-align: center;
     background-color: rgb(240, 222, 199);
     padding: 20px;
-    box-shadow:0 50px 50px #757676;
+    box-shadow: 0 50px 50px #757676;
 }
-.list .item img{
+
+/* Styling for product item images */
+.list .item img {
     width: 90%;
 }
-.list .item .title{
+
+/* Styling for product item titles */
+.list .item .title {
     font-weight: 600;
 }
-/*.list .item .price{
+
+/* Styling for product item prices */
+/* .list .item .price {
     margin-left:;
-}*/
-.list .item button{
+} */
+
+/* Styling for add to cart buttons within product items */
+.list .item button {
     background-color: bisque;
     color: #160b0b;
     padding: 5px;
     width: 50%;
 }
-.listCard li{
+
+/* Styling for each item in the shopping cart list */
+.listCard li {
     display: grid;
-    grid-template-columns: 100px repeat(3 , 1fr);
+    grid-template-columns: 100px repeat(3, 1fr);
     color: #090707;
     font-family: bold;
     row-gap: 10px;
     margin-bottom: 20px;
 }
-.listCard li div{
-    display: flex;
-    justify-content: center ;
-    align-items: center;   
-}
-.listCard li img{
-    border-radius: 10%;
-    border-color:#0e0606;
-    border: 2px;
-   width: 90%; 
-}
-.listCard button{
 
+/* Styling for content within each shopping cart item */
+.listCard li div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for images within the shopping cart items */
+.listCard li img {
+    border-radius: 10%;
+    border-color: #0e0606;
+    border: 2px;
+    width: 90%;
+}
+
+/* Styling for buttons within the shopping cart items */
+.listCard button {
     width: 15%;
     height: 20%;
-    background-color:#aab7ae;
+    background-color: #aab7ae;
     border: none;
 }
-.listCard .count{
-    margin: 0 10px;   
+
+/* Styling for the quantity count within shopping cart items */
+.listCard .count {
+    margin: 0 10px;
 }
