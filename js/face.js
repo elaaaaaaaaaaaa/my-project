@@ -11,7 +11,9 @@ openShopping.addEventListener('click',()=>{
 closeShopping.addEventListener('click',()=>{
     body.classList.remove('active');
 })
+// Define an array of product objects
 let products = [
+// Each product has an id, name, image, and price
     {
         id: 1,
         name: 'SVR (gel peau seche)',

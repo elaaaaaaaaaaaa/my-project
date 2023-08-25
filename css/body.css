@@ -76,6 +76,11 @@ header .shopping span{
     left: 94%;
     padding: 3px 10px;
 }
+#login{
+    margin-left: 0px;
+    background-color: bisque;
+    border-radius: 5px;
+}
 .list{
     display: grid;
     grid-template-columns: repeat(3 , 1fr);

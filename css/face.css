@@ -163,6 +163,11 @@ header .shopping span{
 /*.list .item .price{
     margin-left:;
 }*/
+#login{
+    margin-left: 0px;
+    background-color: bisque;
+    border-radius: 5px;
+}
 .list .item button{
     background-color: bisque;
     color: #160b0b;

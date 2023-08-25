@@ -1,4 +1,3 @@
-// Get references to the necessary DOM elements
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
 let list = document.querySelector('.list');
@@ -6,16 +5,12 @@ let listCard = document.querySelector('.listCard');
 let body = document.querySelector('body');
 let total = document.querySelector('.quantity');
 
-// Open shopping cart when clicked
-openShopping.addEventListener('click', () => {
+openShopping.addEventListener('click',()=>{
     body.classList.add('active');
-});
-
-// Close shopping cart when clicked
-closeShopping.addEventListener('click', () => {
+})
+closeShopping.addEventListener('click',()=>{
     body.classList.remove('active');
-});
-
+})
 // Define an array of product objects
 let products = [
     // Each product has an id, name, image, and price
@@ -93,60 +88,62 @@ let products = [
     },          
 ];
 
-// Array to hold selected products and their quantities
-let listCards = [];
-
-// Initialize the application by populating the product list
-function initApp() {
-    products.forEach((value, key) => {
+let listCards= [];
+function initApp(){
+    products.forEach((value, key)=>{
         let newDiv = document.createElement('div');
         newDiv.classList.add('item');
-        // Create HTML structure for each product
         newDiv.innerHTML = `
           <img  src="/assets/${value.image}"/>
           <div class="title">${value.name}</div>
           <div class="price">${value.price.toLocaleString()}</div>
           <button onclick="addToCard(${key})">Add to cart</button>
-        `;
-        list.appendChild(newDiv);
-    });
+          `;
+          list.appendChild(newDiv);
+        })
 }
-
-// Call the initialization function
 initApp();
-
-// Function to add a product to the cart
-function addToCard(key) {
-    if (listCards[key] == null) {
-        listCards[key] = products[key];
-        listCards[key].quantity = 1;
+function addToCard(key){
+    if(listCards[key]==null){
+        listCards[key]= products[key];
+        listCards[key].quantity= 1;
     }
     reloadCard();
 }
-
-// Function to update and display the cart contents
-function reloadCard() {
-    listCard.innerHTML = '';
+function reloadCard(){
+    listCard.innerHTML='';
     let count = 0;
     let totalPrice = 0;
-
-    // Iterate through selected products and update cart details
     listCards.forEach((value, key) => {
-        // ...
-    });
+        totalPrice = totalPrice + value.price;
+        count = count + value.quantity;
 
-    // Update the total price and quantity count
+        if(value != null){
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML=`
+                <div><img src="/assets/${value.image}"/></div> 
+                <div>${value.name} </div>
+                <div>${value.price.toLocaleString()}</div>  
+                
+                <div>
+                    <button onclick="changeQuantity(${key} , ${value.quantity - 1})"> - </button>
+                    <div class"count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key},${value.quantity + 1})"> + </button>
+                <div>
+            `;
+            listCard.appendChild(newDiv);
+        }
+    })
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
 }
-
-// Function to change the quantity of a product in the cart
-function changeQuantity(key, quantity) {
-    if (quantity == 0) {
-        delete listCards[key]; // Remove product if quantity becomes zero
-    } else {
-        listCards[key].quantity = quantity;
-        listCards[key].price = quantity * products[key].price;
+function changeQuantity(key,quantity){
+    if(quantity==0){
+        delete listCards[key];
+    }
+    else{
+        listCards[key].quantity= quantity;
+        listCards[key].price= quantity * products[key].price;
     }
     reloadCard();
 }

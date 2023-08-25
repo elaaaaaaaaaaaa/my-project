@@ -2,7 +2,11 @@
 body {
     background-color: rgb(232, 212, 187);
 }
-
+#login{
+    margin-left: 0px;
+    background-color: bisque;
+    border-radius: 5px;
+}
 /* Styling for navigation bar */
 .navbar {
     display: flex;

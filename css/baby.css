@@ -1,5 +1,11 @@
 body{
-    background-image: url('/assets/back.jpg');
+    background-image: url('/assets/bg3.jpg');
+    background-size: cover;
+}
+#login{
+    margin-left: 0px;
+    background-color: bisque;
+    border-radius: 5px;
 }
 .navbar {
     display: flex;
@@ -29,11 +35,6 @@ a{
     width: 150px;
     margin-top: 8px;
     border-radius: 0%;
-}
-#login{
-    margin-left: 0px;
-    background-color: bisque;
-    border-radius: 5px;
 }
 .entete{
     display: flex;
@@ -184,8 +185,7 @@ header .shopping span{
 .listCard li div{
     display: flex;
     justify-content: center ;
-    align-items: center;
-
+    align-items: center;   
 }
 .listCard li img{
     border-radius: 10%;

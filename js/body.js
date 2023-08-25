@@ -1,4 +1,3 @@
-// Get references to the necessary DOM elements
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
 let list = document.querySelector('.list');
@@ -6,183 +5,181 @@ let listCard = document.querySelector('.listCard');
 let body = document.querySelector('body');
 let total = document.querySelector('.quantity');
 
-// Open shopping cart when clicked
-openShopping.addEventListener('click', () => {
+openShopping.addEventListener('click',()=>{
     body.classList.add('active');
-});
-
-// Close shopping cart when clicked
-closeShopping.addEventListener('click', () => {
+})
+closeShopping.addEventListener('click',()=>{
     body.classList.remove('active');
-});
-
+})
 // Define an array of product objects
 let products = [
     // Each product has an id, name, image, and price
     {
         id: 1,
-        name: 'SVR (gel peau seche)',
+        name: 'NIVEA body lotion',
         image: '1-.jpg',
-        price: 50 
+        price: 25 
     },
     {
         id:2,
-        name: 'C+',
+        name: 'ROSA body lotion',
         image: '2-.jpg',
-        price: 60
+        price: 25
     },
     {
         id:3,
-        name: 'OXI ( peaux grasse)',
+        name: 'VASELINE',
         image: '3-.jpg',
-        price: 30
+        price: 13
     },
     {
         id:4,
-        name: 'AVENE (gel peau mixte)',
+        name: 'ALOE body lotion',
         image: '4-.jpg',
         price: 27
     },  
     {
         id:5,
-        name: 'URIAGE (gel peau grasse)',
+        name: 'gel douche',
         image: '5-.jpg',
-        price: 70
+        price: 17
     },    
     {
         id:6,
-        name : 'SVR ecran solaire',
+        name : 'DOVE',
         image : '6-.jpg',
         price: 51
     },
     {
         id:7,
-        name: 'SYNNY (grasse)',
+        name: 'body lotion (chacolate)',
         image: '7-.jpg',
         price: 60
     },
     {
         id:8,
-        name: 'PRODERMA (peau seche°',
+        name: 'TRESOR',
         image: '8-.jpg',
         price: 60
     },
     {
         id:9,
-        name: 'mask vitamin C + serum',
+        name: 'GOMMAGE',
         image: '9-.jpg',
         price: 60
     },
     {
         id:10,
-        name: 'GOLD mask',
+        name: 'SPA BODY LOTION',
         image: '10-.jpg',
         price: 60
     },  
     {
         id:11,
-        name: 'CLAY mask',
+        name: 'MY WAY ferfum',
         image: '11-.jpg',
         price: 60
     },  
     {
         id:12,
-        name: 'PACKET : serum + oil + body butter + gommage cream + vitamin E  en promotion',
+        name: 'oily body lotion',
         image: '12-.jpg',
         price: 150
     },    
     {
         id:13,
-        name: 'SEPHORA packet',
+        name: 'gel douche riche en vitamines + effet gommage',
         image: '13-.jpg',
         price: 200
     },   
     {
         id:14,
-        name: 'FRE',
+        name:'gommage',
         image: '14-.jpg',
         price: 53
     },
     {
         id:15,
-        name: 'M hydra ',
+        name: 'BODY BUTTER',
         image: '15-.jpg',
         price: 27
     },   
     {
         id:16,
-        name: 'OLAY ',
+        name: 'BODY BUTTER (starwbery)',
         image: '16-.jpg',
         price: 40
     },
     {
         id:17,
-        name: 'AVENE creme hy ',
+        name: 'HYDRA ',
         image: '17-.jpg',
         price: 38
     },  
     {
         id:18,
-        name: 'packet E-S-K',
+        name: 'MISS DIOR',
         image: '18-.jpg',
         price: 38
     },        
 ];
 
-// Array to hold selected products and their quantities
-let listCards = [];
-
-// Initialize the application by populating the product list
-function initApp() {
-    products.forEach((value, key) => {
+let listCards= [];
+function initApp(){
+    products.forEach((value, key)=>{
         let newDiv = document.createElement('div');
         newDiv.classList.add('item');
-        // Create HTML structure for each product
         newDiv.innerHTML = `
           <img  src="/assets/${value.image}"/>
           <div class="title">${value.name}</div>
           <div class="price">${value.price.toLocaleString()}</div>
           <button onclick="addToCard(${key})">Add to cart</button>
-        `;
-        list.appendChild(newDiv);
-    });
+          `;
+          list.appendChild(newDiv);
+        })
 }
-
-// Call the initialization function
 initApp();
-
-// Function to add a product to the cart
-function addToCard(key) {
-    if (listCards[key] == null) {
-        listCards[key] = products[key];
-        listCards[key].quantity = 1;
+function addToCard(key){
+    if(listCards[key]==null){
+        listCards[key]= products[key];
+        listCards[key].quantity= 1;
     }
     reloadCard();
 }
-
-// Function to update and display the cart contents
-function reloadCard() {
-    listCard.innerHTML = '';
+function reloadCard(){
+    listCard.innerHTML='';
     let count = 0;
     let totalPrice = 0;
-
-    // Iterate through selected products and update cart details
     listCards.forEach((value, key) => {
-        // ...
-    });
+        totalPrice = totalPrice + value.price;
+        count = count + value.quantity;
 
-    // Update the total price and quantity count
+        if(value != null){
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML=`
+                <div><img src="/assets/${value.image}"/></div> 
+                <div>${value.name} </div>
+                <div>${value.price.toLocaleString()}</div>  
+                
+                <div>
+                    <button onclick="changeQuantity(${key} , ${value.quantity - 1})"> - </button>
+                    <div class"count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key},${value.quantity + 1})"> + </button>
+                <div>
+            `;
+            listCard.appendChild(newDiv);
+        }
+    })
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
 }
-
-// Function to change the quantity of a product in the cart
-function changeQuantity(key, quantity) {
-    if (quantity == 0) {
-        delete listCards[key]; // Remove product if quantity becomes zero
-    } else {
-        listCards[key].quantity = quantity;
-        listCards[key].price = quantity * products[key].price;
+function changeQuantity(key,quantity){
+    if(quantity==0){
+        delete listCards[key];
+    }
+    else{
+        listCards[key].quantity= quantity;
+        listCards[key].price= quantity * products[key].price;
     }
     reloadCard();
 }
